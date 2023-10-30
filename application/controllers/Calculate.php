@@ -5,12 +5,12 @@ class Calculate extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model("calculate_model");
     }
 
     public function index()
     {
-       $data = $this->calculate_model->fetch_data();
+	   $this->load->model("calculate_model");
+       $data = $this->calculate_model->InsertNum();
        $this->load->view("calculate/index", $data);
 
     }
